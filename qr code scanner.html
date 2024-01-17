@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="website" id="first-website">
+            <h1>sender</h1>
+            <p>Balance: ₱<span id="budget1">500</span></p>
+            <button onclick="sendMoney()">Send ₱135</button>
+        </div>
+        <div class="website" id="second-website">
+            <h1>receiver</h1>
+            <p>balance: ₱<span id="budget2">0</span></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        function sendMoney() {
+            var budget1 = parseInt(document.querySelector('#budget1').textContent);
+            var budget2 = parseInt(document.querySelector('#budget2').textContent);
+            
+
+            if (budget1 >= 135) {
+                budget1 -= 135;
+                budget2 += 135;
+            } else {
+                alert("Insufficient budget on First Website.");
+            }
+
+            document.querySelector('#budget1').textContent = budget1;
+            document.querySelector('#budget2').textContent = budget2;
+            
+        }
+    </script>
+  
+</body>
+</html>
+

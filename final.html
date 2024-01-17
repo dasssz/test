@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homepage</title>
+    <style>
+        body {
+            background-image: url('bluenayellow.jfif'); 
+            background-size: cover;
+            background-position: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+            justify-content: center;
+            height: 100vh; 
+        }
+
+        .content {
+            text-align: left;
+            margin-left: 20px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        button {
+            background-color: #3836ac;
+            color: rgb(255, 255, 255);
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            margin-top: 10px; 
+        }
+
+        button:hover {
+            background-color: #d8db0a;
+        }
+
+        img {
+            width: 25%; 
+            height: auto;
+            margin-top: 10px;  
+            border-radius: 25%;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="showCheeseBurgerAlert()">Cheese burger (₱35.00)</button>
+    <img src="cheese burger.jpg" alt="Cheese Burger Image">
+    
+    <script>
+        function showCheeseBurgerAlert() {
+            alert("BES has ₱100.00 tax (minimum), proceed payment?");
+            window.location.href = 'testing.html';
+        }
+    </script>
+
+    <button onclick="showPlainBurgerAlert()">Plain Burger (₱35.00)</button>
+    <img src="no cheese.jfif" alt="Plain Burger Image">
+
+    <script>
+        function showPlainBurgerAlert() {
+            alert("BES has ₱100.00 tax (minimum), proceed payment?");
+            window.location.href = 'testing.html'; 
+        }
+    </script>
+
+    <button onclick="showCheeseBurgerWithEggAlert()">Cheese Burger With Egg (₱35.00)</button>
+    <img src="burger egg.png" alt="Cheese Burger with Egg Image">
+
+    <script>
+        function showCheeseBurgerWithEggAlert() {
+            alert("BES has ₱100.00 tax (minimum), proceed payment?");
+            window.location.href = 'testing.html';
+        }
+    </script>
+</body>
+</html>

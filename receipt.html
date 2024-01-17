@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Receipt</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .header, .footer {
+            text-align: center;
+        }
+
+        .header h1, .footer p {
+            margin: 5px 0;
+        }
+
+        .section {
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .close-button {
+            background-color: #3836ac;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .close-button:hover {
+            background-color: #d8db0a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Bulacan Ecumenical School Canteen</h1>
+            <p>154 Primero de Junio, Liang, Malolos, Bulacan<br>
+               Phone: 0928 229 4473<br>
+               Email: BES@idk.com<br>
+               Website: www.BES.com</p>
+        </div>
+
+        <div class="section">
+            <p id="date">Date: December 12, 2023</p>
+            <p id="updatedDate"></p>
+            <p>Receipt Number: #123456789</p>
+        </div>
+    
+
+        <div class="section">
+            <h2>Buyer:</h2>
+            <p>Customer Name: John Doe<br>
+               Address: 012 bato st. brgy hangin, lupa city of earth<br>
+               Email: john.doe@email.com<br>
+               Phone: 0912345678</p>
+        </div>
+
+        <div class="section">
+            <table>
+                <div class="section">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Description</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Product 1</td>
+                                <td>1</td>
+                                <td>₱35.00</td>
+                                <td>₱35.00</td>
+                            </tr>
+                        
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="3">Subtotal:</td>
+                                <td>₱35.00</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">BES Tax:</td>
+                                <td>₱100.00</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3"><strong>Total:</strong></td>
+                                <td><strong>₱135.00</strong></td>
+                            </tr>
+                        </tfoot>
+                    
+                </div>
+            
+        </div>
+
+        <div class="section">
+            <p>Payment Method: gcash</p>
+        </div>
+    </table>
+
+       
+
+        
+        <button class="close-button" onclick="closeWindow()">Close Window</button>
+    </div>
+
+    <script>
+        function closeWindow() {
+            window.close();
+        }
+
+    function updateTimestamp() {
+        var dateElement = document.getElementById("date");
+        if (dateElement) {
+            var currentDate = new Date();
+            var formattedDate = currentDate.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric',
+            });
+
+            dateElement.textContent = "Date: " + formattedDate;
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", updateTimestamp);
+    </script>
+
+    </script>
+</body>
+</html>
