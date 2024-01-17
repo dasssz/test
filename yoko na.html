@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="website" id="first-website">
+            <h1>sender</h1>
+            <p>Balance: ₱<span id="budget1">500</span></p>
+            <button onclick="sendMoney()">Send ₱135</button>
+        </div>
+        <div class="website" id="second-website">
+            <h1>receiver</h1>
+            <p>balance: ₱<span id="budget2">0</span></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        function sendMoney() {
+            var budget1 = parseInt(document.querySelector('#budget1').textContent);
+
+        if (budget1 >= 135) {
+            budget1 -= 135;
+            document.querySelector('#budget1').textContent = budget1;
+
+            // Prepare the email content
+            var subject = "Payment Notification";
+            var body = "I have sent ₱135.";
+
+            // Construct the mailto URL
+            var mailtoUrl = "mailto:deepzd43@gmail.com" + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+
+            // Open the default email client with the pre-filled email
+            window.location.href = mailtoUrl;
+        } else {
+            alert("Insufficient budget on First Website.");
+        }
+    }
+    </script>
+  
+</body>
+</html>
+
